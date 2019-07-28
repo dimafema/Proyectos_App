@@ -75,6 +75,14 @@ getPosterImg() {
   }else{
      return 'https://image.tmdb.org/t/p/w500/$posterPath';
   }
+}
+getBackgrounImg() {
+  //si posterPath es nule retorna una imagen de muestra
+  if (posterPath == null){
+    return 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmGvECeGTH2HTICth4IJBGmqfW1MFBoRpA9YeToStExv7EbcQ-';
+  }else{
+     return 'https://image.tmdb.org/t/p/w500/$backdropPath';
+  }
 
  
 }

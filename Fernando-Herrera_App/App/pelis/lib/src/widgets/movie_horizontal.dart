@@ -7,10 +7,10 @@ import 'package:pelis/src/models/pelicula_models.dart';
 class MovieHorizontal extends StatelessWidget {
 
   final List<Pelicula> peliculas;
-  final Function siguientePagina;
+  final Function siguientePagina;  //Cremaos función
 
-  MovieHorizontal({@required this.peliculas, @required this.siguientePagina});
-  
+  MovieHorizontal({@required this.peliculas, @required this.siguientePagina});//la requerimos en esta función
+  //cramos un controlador para ver cuando llega al final de las pelis en horizontal
   final _pageController = new PageController(
     initialPage: 1,
     viewportFraction: 0.3,
@@ -18,8 +18,9 @@ class MovieHorizontal extends StatelessWidget {
   
       @override
       Widget build(BuildContext context) {
+        //controlamos la pantalla
         final _screenSize = MediaQuery.of(context).size;
-
+        //se disparará cada vez que se mueva las imágenes horizontales cuando falte 200px
         _pageController.addListener((){
         if (_pageController.position.pixels >= _pageController.position.maxScrollExtent -200) {
           siguientePagina();
@@ -33,9 +34,9 @@ class MovieHorizontal extends StatelessWidget {
             pageSnapping: false,
             controller: _pageController,
             //children: _tarjetas(context),
-            itemCount: peliculas.length,
+            itemCount: peliculas.length,//le decimos cuanto item tiene que renderizar
             itemBuilder: ( context, i) {
-              return _tarjeta(context, peliculas[i]);
+              return _tarjeta(context, peliculas[i]);//retornamos el método tarjeta
             },
           ), //este widget sirve para mostrar la tarjetas de modo horizontal con scroll
                       
@@ -45,8 +46,8 @@ class MovieHorizontal extends StatelessWidget {
            
            
            
-            Widget _tarjeta(BuildContext context, Pelicula pelicula) {
-             final tarjeta = Container(
+            Widget _tarjeta(BuildContext context, Pelicula pelicula) {//requiere dos metodos contex y la pelicula
+             final tarjeta = Container( //creamos una variable tipo container
                 margin: EdgeInsets.only(right: 15.0),
                 child: Column(
                   children: <Widget>[
@@ -69,10 +70,10 @@ class MovieHorizontal extends StatelessWidget {
                 ),
               );
 
-              return GestureDetector(
+              return GestureDetector(//Creamos otro widger, este sirve para saber cuando se pulsa el el widget tarjeta
                 child: tarjeta,
-                onTap: (){
-                  Navigator.pushNamed(context, 'detalle', arguments: pelicula);
+                onTap: (){//detectamos el tap
+                  Navigator.pushNamed(context, 'detalle', arguments: pelicula);//lo mandamos a otra pantalla "detalle"
                 }
               );
 

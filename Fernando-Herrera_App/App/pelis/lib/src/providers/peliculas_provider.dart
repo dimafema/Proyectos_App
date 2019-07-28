@@ -59,7 +59,7 @@ class PeliculasProvider {
     Future<List<Pelicula>> getPopulares() async {   //es un listado de películas
       if (_cargando) return [];//si estoy cargando datos no hago nada
       
-      _cargando = true;//y si no esto cargando entonces cargo dato
+      _cargando = true;//y si no estoy cargando entonces cargo dato
       
       _popularesPage++; //le sumamos uno cada verz que corra el método
 
