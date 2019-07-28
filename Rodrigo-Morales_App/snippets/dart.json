@@ -1,0 +1,68 @@
+{
+	"Widget": {
+        "prefix": "StatelessWidgetSnippet",
+        "body": [
+		  "class ${1:name} extends StatelessWidget {",
+		   " @override",
+  		   " Widget build(BuildContext context) {",
+		   "  return new MaterialApp(",
+		   "\t$0",
+		   " );",
+		  " }",
+		  "}"
+        ],
+        "description": "Basic Widget"
+	},
+	"WidgetClass": {
+        "prefix": "StatefulSnippet",
+        "body": [
+		  "class ${1:name} extends StatefulWidget {",
+		   "  @override",
+  		   "  _${1:name}State createState() => new _${1:name}State();",
+		  " }",
+		  "class _${1:name}State extends State<${1:name}> {",
+		  "  @override",
+		  "  Widget build(BuildContext context) {",
+		  "   return new Container(",
+			"\t$0",
+		  "   );",			
+		  "  }",
+		  "}"
+        ],
+        "description": "Basic Widget"
+	},
+	"import_material": {
+        "prefix": "import material",
+        "body": [
+		  "import 'package:flutter/material.dart';",
+        ],
+        "description": "import material"
+	},
+	"main_method": {
+		"prefix": "main()",
+		"body": [
+			  "void main() {",
+			   "  runApp(new MaterialApp(",
+			     "   home: ${1:name},",
+			  "  ));",
+			  "}"
+		],
+
+
+		"description": "Main Widget"
+	},
+	
+	// Place your snippets for dart here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+}
